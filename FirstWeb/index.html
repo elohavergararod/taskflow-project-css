@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow</title>
+    <link rel="stylesheet" href="css/FirstWeb.css" />
+  </head>
+  <body>
+    <header>
+      <h1>TaskFlow</h1>
+    </header>
+    <main>
+
+      <aside>
+        <p class="sidebar-label">Status</p>
+        <div class="status-filters">
+          <button class="pill activate" data-filter="all">All</button>
+          <button class="pill" data-filter="pending">Pending</button>
+          <button class="pill" data-filter="completed">Completed</button>
+        </div>
+      </aside>
+
+      <section>
+
+        <div class="form-row">
+          <input type="text" id="taskInput" placeholder="New task...">
+
+          <select id="prioritySelect">
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+
+          <select id="categorySelect">
+            <option value="work">Work</option>
+            <option value="studies">Studies</option>
+            <option value="personal">Personal</option>
+          </select>
+
+          <button id="addTaskBtn" type="button">+ Add</button>
+
+          <input type="text" id="searchInput" placeholder="Search task..." />
+        </div>
+
+        <div class="table-filters">
+        <span class="filter-label">Priority:</span>
+        <button class="tf-pill active" data-priority="all">All</button>
+        <button class="tf-pill" data-priority="high">High</button>
+        <button class="tf-pill" data-priority="medium">Medium</button>
+        <button class="tf-pill" data-priority="low">Low</button>
+
+        <span class="filter-label" style="margin-left:12px">Category:</span>
+        <button class="tf-pill active" data-category="all">All</button>
+        <button class="tf-pill" data-category="work">Work</button>
+        <button class="tf-pill" data-category="studies">Studies</button>
+        <button class="tf-pill" data-category="personal">Personal</button>
+
+        <span class="counter" id="taskCounter">0/0</span>
+      </div>
+      
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:36px"></th>
+              <th>Task</th>
+              <th>Priority</th>
+              <th>Category</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="taskBody">
+          </tbody>
+        </table>
+        </div>
+      </section>
+
+    </main>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
